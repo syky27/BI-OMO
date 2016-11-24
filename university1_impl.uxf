@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>540</x>
+      <y>20</y>
+      <w>230</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*ProfessorRole*
+--
+headOfDepartment: Boolean[1]
+startDate: Date[1]
+_fixRate: Currency[1]_
+--
+salary(): Currency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>690</x>
+      <y>760</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*StudentRole*
+--
+--
+participatesIn(): Set
+studies(): Set
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>170</x>
+      <y>740</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*Subject Registration*
+--
+registered: Timestamp[1]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>530</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*Subject*
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>330</x>
+      <y>190</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*Department*
+--
+--
+taughtSubjects(): Set
+guaranteedSubjects(): Set</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>380</x>
+      <y>740</y>
+      <w>190</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*SuspendedStudentPhase*
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>410</x>
+      <y>830</y>
+      <w>160</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*ActiveStudentPhase*
+--
+--
+studies(): Set</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>290</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*TeacherRole*
+--
+--
+teaches(): Set
+_ratePerSubject: Currency[1]_
+--
+salaryComponent(): Currency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>300</x>
+      <y>290</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*SubjectGuarantorRole*
+--
+start: Date
+_fixRate: Currency[1]_
+--
+salaryComponent(): Currency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>410</x>
+      <y>90</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1..*
+staff: Set</panel_attributes>
+    <additional_attributes>60;100;60;70;150;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>580</x>
+      <y>180</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+OrderedCollection
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>590</x>
+      <y>90</y>
+      <w>110</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+subroles
+</panel_attributes>
+    <additional_attributes>60;30;60;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>570</x>
+      <y>210</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r1=1
+r2=0..*
+</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>260</x>
+      <y>350</y>
+      <w>130</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r1=1..*
+r2=1
+guarantor</panel_attributes>
+    <additional_attributes>30;180;110;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>740</y>
+      <w>170</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1
+phase</panel_attributes>
+    <additional_attributes>150;60;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>420</x>
+      <y>530</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*TeachingRelator*
+--
+room: String[0..1]
+time: Time[0..1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>350</x>
+      <y>350</y>
+      <w>284</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1..*
+teachingRelators: OrderedCollection</panel_attributes>
+    <additional_attributes>190;30;110;180</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>100</x>
+      <y>770</y>
+      <w>330</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1..*
+registeredSubjects: OrderedCollection</panel_attributes>
+    <additional_attributes>310;90;150;90;130;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>790</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1
+phase</panel_attributes>
+    <additional_attributes>150;30;30;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>560</x>
+      <y>720</y>
+      <w>90</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=.
+XOR</panel_attributes>
+    <additional_attributes>50;170;50;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>180</x>
+      <y>590</y>
+      <w>102</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r1=0..*
+r2=1
+subject</panel_attributes>
+    <additional_attributes>80;150;60;130;60;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>280</x>
+      <y>510</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=1
+subject</panel_attributes>
+    <additional_attributes>140;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>460</x>
+      <y>200</y>
+      <w>140</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r1=1
+r2=0..*
+</panel_attributes>
+    <additional_attributes>120;30;80;30;30;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>190</y>
+      <w>220</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>fg=gray
+*Faculty*
+--
+/Will not be implemented/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>160</y>
+      <w>160</w>
+      <h>94</h>
+    </coordinates>
+    <panel_attributes>fg=gray
+lt=-&gt;
+m2=1..*
+departments
+{Set}</panel_attributes>
+    <additional_attributes>30;50;140;50</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>240</x>
+      <y>80</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*_departments: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>290</x>
+      <y>110</y>
+      <w>130</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=0..*
+</panel_attributes>
+    <additional_attributes>30;30;110;80</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>140</x>
+      <y>370</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*_subjects: Set_*
+
+</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>400</y>
+      <w>60</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=0..*
+</panel_attributes>
+    <additional_attributes>30;30;40;130</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>730</x>
+      <y>660</y>
+      <w>171</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*_students: Set_*</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//Modify the code below to
+//define the element's behavior.
+//
+
+int y=20;
+
+for(String textline : textlines) {
+	y = y + textHeight();
+	printCenter(textline,y);
+}
+
+height = onGrid(y + 25);
+
+//drawRect(0,0,width,height);
+
+Polygon p = new Polygon();
+p.addPoint(0, 20);
+p.addPoint(width/2, 0);
+p.addPoint(width, 20);
+p.addPoint(width, height-20);
+p.addPoint(width/2, height);
+p.addPoint(0, height-20);
+drawPolygon(p);
+</custom_code>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>780</x>
+      <y>690</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+r2=0..*
+</panel_attributes>
+    <additional_attributes>30;30;30;70</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>660</x>
+      <y>500</y>
+      <w>180</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>bg=light_gray
+*Person*
+--
+titlesBefore: String[0..1]
+name: String[1]
+titlesAfter: String[0..1]
+dateOfBirth: Date[1]</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>660</x>
+      <y>570</y>
+      <w>90</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+person
+r1=1
+r2=0..*
+</panel_attributes>
+    <additional_attributes>50;30;50;190</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>700</x>
+      <y>90</y>
+      <w>108</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+person&gt;
+m1=0..*
+m2=1
+</panel_attributes>
+    <additional_attributes>60;30;60;410</additional_attributes>
+  </element>
+</diagram>
